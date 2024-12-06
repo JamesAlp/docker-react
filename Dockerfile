@@ -11,6 +11,7 @@ RUN npm run build
 
 # run phase
 FROM nginx:1.27.3
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 
 # default command of the nginx image is to just start up, so we don't need to specify a startup command
